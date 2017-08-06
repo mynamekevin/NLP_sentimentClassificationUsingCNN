@@ -5,7 +5,6 @@ from gensim.models import Word2Vec
 
 class TextCNN(object):
     """
-    A CNN for text classification.
     Uses an embedding layer, followed by a convolutional, max-pooling and softmax layer.
     """
     def __init__(
@@ -17,7 +16,7 @@ class TextCNN(object):
         self.input_y = tf.placeholder(tf.float32, [None, num_classes], name="input_y")
         self.dropout_keep_prob = tf.placeholder(tf.float32, name="dropout_keep_prob")
 
-        # Keeping track of l2 regularization loss (optional)
+        # l2 regularization loss
         l2_loss = tf.constant(0.0)
 
         # Embedding layer
